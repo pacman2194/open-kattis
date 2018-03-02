@@ -1,0 +1,27 @@
+#!/bin/bash
+echo "ROT0:"
+./rot < rot0
+echo ""
+echo "ROT45:"
+./rot < rot45
+echo ""
+echo "ROT90:"
+./rot < rot90
+echo ""
+echo "ROT135:"
+./rot < rot135
+echo ""
+echo "ROT180:"
+./rot < rot180
+echo ""
+echo "ROT225:"
+./rot < rot225
+echo ""
+echo "ROT270:"
+./rot < rot270
+echo ""
+echo "ROT315:"
+./rot < rot315
+echo ""
+echo "ROT360:"
+./rot < rot360
