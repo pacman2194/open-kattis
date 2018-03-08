@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class seed {
+public class grassseed {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 
