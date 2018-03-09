@@ -75,8 +75,8 @@ void spit(){
 }
 
 int main(){
-	node* head = NULL;
-	node* tail = NULL;
+	head = NULL;
+	tail = NULL;
 	int size = 0;
 	char c = getchar();
 	while(c!='\n'){
