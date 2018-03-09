@@ -9,8 +9,6 @@ int main(int argc, char *argv[])
 		int a[n];
 		int ac[n];
 		int b[n];
-		//int ba[n];
-		//int order[n];
 		for(int i=0; i<n; i++){
 			scanf(" %d", &a[i]);
 			ac[i]=a[i];
@@ -23,8 +21,6 @@ int main(int argc, char *argv[])
 		for(int i=0; i<n; i++){
 			int j;
 			for(j=0; a[i] != ac[j]; j++){}
-			//order[i] = j;
-			//ba[i] = b[j];
 			printf("%d\n",b[j]);
 		}
 		printf("\n");
