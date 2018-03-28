@@ -18,4 +18,4 @@ if ans == 0:
 elif leng == 0:
     print(int((bin(c)[2::] + bin(c)[:1:-1]), 2))
 else:
-    print(int((bin(c)[2::] + bin(c)[-2:1:-1]), 2))  # modify
+    print(int((bin(c)[2::] + bin(c)[-2:1:-1]), 2))
