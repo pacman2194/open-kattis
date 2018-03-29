@@ -8,44 +8,49 @@ int compare (const void * a, const void * b)
 
 int main()
 {
-	long cases,cs,e,csAv,eAv,csT,eT,funny;
-	long *csSt, *eSt;
-	scanf("%ld",&cases);
+	int cases, funny;
+	unsigned long long cs,e,csT,eT;
+	unsigned long long *csSt, *eSt;
+	scanf("%d",&cases);
 	while(cases--)
 	{
-		csAv = 0;
-		eAv = 0;
 		csT = 0;
 		eT = 0;
 		funny = 0;
-		scanf(" %ld %ld",&cs,&e);
+		scanf(" %lld %lld",&cs,&e);
 		csSt = malloc(cs * sizeof(long));
 		eSt = malloc(e * sizeof(long));
 		for(int i=0; i<cs; i++){
-			scanf(" %ld", csSt+i);
+			scanf(" %lld", csSt+i);
 			csT += csSt[i];
 		}
-		for(int i=0; i<e; i++){
-			scanf(" %ld", eSt+i);
-			eT += eSt[i];
-		}
 		qsort(csSt,cs,sizeof(long),compare);
-		csAv=csT/cs;
-		eAv=eT/e;
-		printf("CS Av: %ld\tE Av: %ld\n",csAv,eAv);
-		for(int i=0; i<cs; i++){
-			if(csSt[i] < csAv && csSt[i] > eAv){
-				funny++;
-				cs--;
-				csT -= csSt[i];
-				csAv=csT/cs;
-				e++;
-				eT += csSt[i];
-				eAv=eT/e;
+		if(e > 0){
+			for(int i=0; i<e; i++){
+				scanf(" %lld", eSt+i);
+				eT += eSt[i];
+			}
+			for(int i=0; i<cs; i++){
+				if(((long double)(csSt[i])) < ((long double)(csT/cs)) && ((long double)(csSt[i])) > ((long double)(eT/e))){
+					funny++;
+					cs--;
+					csT -= csSt[i];
+					e++;
+					eT += csSt[i];
+				}
+			}
+		}else{
+			for(int i=0; i<cs; i++){
+				if(((long double)(csSt[i])) < ((long double)(csT/cs))){
+					funny++;
+					cs--;
+					csT -= csSt[i];
+					e++;
+					eT += csSt[i];
+				}
 			}
 		}
-		printf("CS Av: %ld\tE Av: %ld\n",csAv,eAv);
-		printf("%ld\n",funny);
+		printf("%d\n",funny);
 	}
 
 	return 0;
